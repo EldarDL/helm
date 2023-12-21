@@ -1,5 +1,3 @@
-![Build Status](https://github.com/EldarDL/helm-project/actions/workflows/docker-image.yml/badge.svg)
-
 # Rick and Morty Characters Script
 
 This script queries the Rick and Morty API to find characters that meet specific conditions and writes the results to a CSV file.
