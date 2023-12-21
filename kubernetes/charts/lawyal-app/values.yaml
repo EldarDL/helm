@@ -1,0 +1,24 @@
+replicaCount: 1
+
+image:
+  repository: ghcr.io/eldardl/helm-project
+  tag: latest
+  pullPolicy: Always
+
+service:
+  name: helm-app-service
+  selectorApp: helm-app
+  protocol: TCP
+  port: 80
+  targetPort: 5000
+
+ingress:
+  enabled: true
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  host: helm-app.com
+  path: /
+  pathType: Prefix
+  backendServiceName: helm-app-service
+  backendServicePort: 80
+
